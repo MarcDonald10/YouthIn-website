@@ -55,7 +55,7 @@ export default function InteractiveDashboard() {
   }
 
   return (
-    <section className="py-32 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
       <div className="absolute inset-0">
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
@@ -77,32 +77,32 @@ export default function InteractiveDashboard() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full mb-6 border border-primary/30 glow-primary"
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full mb-4 sm:mb-5 md:mb-6 border border-primary/30 glow-primary"
             whileHover={{ scale: 1.05 }}
           >
-            <BarChart3 size={20} />
-            <span className="font-bold">Technologie de Pointe</span>
+            <BarChart3 size={18} className="sm:w-5 sm:h-5" />
+            <span className="font-bold text-sm sm:text-base">Technologie de Pointe</span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-display font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black mb-4 sm:mb-5 md:mb-6 px-4">
             Un Écosystème <span className="gradient-primary-animated">Complet</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             Une plateforme tout-en-un pensée pour maximiser le succès entrepreneurial
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center max-w-7xl mx-auto">
           <motion.div
-            className="perspective-1000"
+            className="perspective-1000 order-2 lg:order-1"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             initial={{ opacity: 0, x: -50 }}
@@ -112,46 +112,45 @@ export default function InteractiveDashboard() {
             <motion.div
               className="relative"
               style={{
-                rotateX,
-                rotateY,
+                rotateX: typeof window !== "undefined" && window.innerWidth >= 1024 ? rotateX : 0,
+                rotateY: typeof window !== "undefined" && window.innerWidth >= 1024 ? rotateY : 0,
                 transformStyle: "preserve-3d",
               }}
             >
-              <div className="card-primary p-8 rounded-3xl neon-border">
-                <div className="flex items-center justify-between mb-6">
+              <div className="card-primary p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl neon-border">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold mb-1">Dashboard Entrepreneur</h3>
-                    <p className="text-sm text-muted-foreground">Vue d'ensemble</p>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">Dashboard Entrepreneur</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Vue d'ensemble</p>
                   </div>
                   <motion.div
-                    className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   >
-                    <Zap className="text-primary" size={24} />
+                    <Zap className="text-primary" size={20} />
                   </motion.div>
                 </div>
 
-                {/* Mock dashboard elements */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {[...Array(3)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="bg-background/50 p-4 rounded-xl border border-primary/20"
+                      className="bg-background/50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-primary/20"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
                       whileHover={{ x: 10, borderColor: "rgba(220, 247, 99, 0.5)" }}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10" />
-                        <div className="flex-1">
-                          <div className="h-3 bg-primary/20 rounded w-32 mb-2" />
-                          <div className="h-2 bg-muted rounded w-24" />
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <div className="h-2.5 sm:h-3 bg-primary/20 rounded w-24 sm:w-32 mb-1.5 sm:mb-2" />
+                          <div className="h-2 bg-muted rounded w-16 sm:w-24" />
                         </div>
                         <motion.div
-                          className="text-2xl font-black text-primary"
+                          className="text-lg sm:text-xl md:text-2xl font-black text-primary"
                           animate={{ opacity: [0.5, 1, 0.5] }}
                           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                         >
@@ -162,15 +161,15 @@ export default function InteractiveDashboard() {
                   ))}
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-4 sm:mt-6 grid grid-cols-3 gap-2 sm:gap-3">
                   {[...Array(3)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="bg-gradient-to-br from-primary/10 to-transparent p-3 rounded-lg text-center"
+                      className="bg-gradient-to-br from-primary/10 to-transparent p-2 sm:p-3 rounded-lg text-center"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className="text-xl font-black text-primary">{120 + i * 40}</div>
-                      <div className="text-xs text-muted-foreground">Métrique {i + 1}</div>
+                      <div className="text-base sm:text-lg md:text-xl font-black text-primary">{120 + i * 40}</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground">Métrique {i + 1}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -179,7 +178,7 @@ export default function InteractiveDashboard() {
           </motion.div>
 
           <motion.div
-            className="space-y-4"
+            className="space-y-3 sm:space-y-4 order-1 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -187,8 +186,8 @@ export default function InteractiveDashboard() {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className={`card-primary p-6 rounded-2xl cursor-pointer transition-all ${
-                  activeFeature === index ? "border-primary/50 scale-105" : ""
+                className={`card-primary p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl cursor-pointer transition-all ${
+                  activeFeature === index ? "border-primary/50 scale-[1.02] sm:scale-105" : ""
                 }`}
                 onClick={() => setActiveFeature(index)}
                 whileHover={{ x: 10 }}
@@ -197,21 +196,21 @@ export default function InteractiveDashboard() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <motion.div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center flex-shrink-0`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center flex-shrink-0`}
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <feature.icon className="text-primary" size={28} />
+                    <feature.icon className="text-primary" size={24} />
                   </motion.div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{feature.title}</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
                   {activeFeature === index && (
                     <motion.div
-                      className="w-3 h-3 rounded-full bg-primary pulse-primary"
+                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary pulse-primary flex-shrink-0"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                     />

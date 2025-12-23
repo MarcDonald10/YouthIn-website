@@ -368,7 +368,7 @@ export default function BlogContent() {
                   className="flex-1 px-6 py-4 bg-dark/60 backdrop-blur-xl border-2 border-primary/20 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-primary transition-colors"
                 />
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="bg-primary text-dark hover:bg-primary/90 glow-primary-intense font-black px-8 py-4 h-auto rounded-xl">
+                  <Button className="bg-primary text-dark hover:bg-primary/90 glow-primary-intense font-black px-8 py-4 h-auto rounded-xl text-secondary">
                     S'abonner
                   </Button>
                 </motion.div>

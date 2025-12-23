@@ -34,8 +34,9 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/98 backdrop-blur-2xl border-b-2 border-primary/20" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/98 backdrop-blur-2xl border-b-2 border-primary/20" : "bg-transparent"
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -58,8 +59,6 @@ export default function Navbar() {
                 className="text-2xl font-display font-black text-foreground group-hover:text-primary transition-colors"
               />
             </motion.div>
-
-
           </Link>
 
           {/* Desktop Navigation */}
@@ -86,10 +85,9 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 asChild
-                className="bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-base px-8 rounded-xl"
+                className="bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
               >
-                <Link href="/download" 
-                    className="text-secondary">Télécharger</Link>
+                <Link href="/download">Télécharger</Link>
               </Button>
             </motion.div>
           </div>
@@ -124,8 +122,9 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`block text-base font-semibold transition-colors py-2 ${pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
-                      }`}
+                    className={`block text-base font-semibold transition-colors py-2 ${
+                      pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+                    }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -135,13 +134,9 @@ export default function Navbar() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                 <Button
                   asChild
-                  className="w-full bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-base px-8 rounded-xl text-black"
+                  className="w-full bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
                 >
-                  <Link
-                    href="/download"
-                  >
-                    Télécharger l&apos;App
-                  </Link>
+                  <Link href="/download">Télécharger l&apos;App</Link>
                 </Button>
               </motion.div>
             </motion.div>

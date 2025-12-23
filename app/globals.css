@@ -283,6 +283,180 @@ html {
   background-size: 20px 20px;
 }
 
+/* Adding advanced micro-interactions and animations */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(220, 247, 99, 0.4);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes slide-in-blur {
+  0% {
+    transform: translateY(30px);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-blur {
+  animation: slide-in-blur 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes magnetic-hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.magnetic-hover:hover {
+  animation: magnetic-hover 0.6s ease-in-out;
+}
+
+@keyframes glow-expand {
+  0% {
+    box-shadow: 0 0 20px rgba(220, 247, 99, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(220, 247, 99, 0.8), 0 0 120px rgba(220, 247, 99, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(220, 247, 99, 0.4);
+  }
+}
+
+.glow-expand-hover:hover {
+  animation: glow-expand 1.5s ease-in-out infinite;
+}
+
+@keyframes border-dance {
+  0%,
+  100% {
+    border-color: rgba(220, 247, 99, 0.3);
+  }
+  50% {
+    border-color: rgba(220, 247, 99, 1);
+  }
+}
+
+.border-dance {
+  animation: border-dance 2s ease-in-out infinite;
+}
+
+@keyframes text-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(220, 247, 99, 0.8);
+  }
+  50% {
+    opacity: 0.95;
+    text-shadow: 0 0 40px rgba(220, 247, 99, 1), 0 0 60px rgba(220, 247, 99, 0.6);
+  }
+}
+
+.text-flicker {
+  animation: text-flicker 3s ease-in-out infinite;
+}
+
+@keyframes background-pan {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.background-pan {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(220, 247, 99, 0.1),
+    transparent,
+    rgba(220, 247, 99, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: background-pan 8s linear infinite;
+}
+
+/* Enhanced card hover effects */
+.card-3d-hover {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d-hover:hover {
+  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Smooth entrance animations */
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-scale {
+  animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glow trail effect */
+@keyframes glow-trail {
+  0% {
+    box-shadow: 0 0 5px rgba(220, 247, 99, 0.5), 0 0 10px rgba(220, 247, 99, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(220, 247, 99, 0.8), 0 0 40px rgba(220, 247, 99, 0.5), 0 0 60px rgba(220, 247, 99, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(220, 247, 99, 0.5), 0 0 10px rgba(220, 247, 99, 0.3);
+  }
+}
+
+.glow-trail {
+  animation: glow-trail 2s ease-in-out infinite;
+}
+
 /* Additional advanced animations */
 @keyframes particle-float {
   0%,
