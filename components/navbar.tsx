@@ -85,9 +85,9 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 asChild
-                className="bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
+                className="bg-primary text-secondary hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
               >
-                <Link href="/download">Télécharger</Link>
+                <Link href="/download"  className="text-secondary">Télécharger</Link>
               </Button>
             </motion.div>
           </div>
@@ -107,7 +107,7 @@ export default function Navbar() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="lg:hidden mt-6 pb-6 space-y-4"
+              className="lg:hidden mt-6 pb-6 space-y-4 bg-secondary backdrop-blur-2xl rounded-lg border border-border/50 p-4"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -134,9 +134,9 @@ export default function Navbar() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                 <Button
                   asChild
-                  className="w-full bg-primary text-dark hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
+                  className="w-full bg-primary text-secondary hover:bg-primary/90 glow-primary font-black text-secondary px-8 rounded-xl"
                 >
-                  <Link href="/download">Télécharger l&apos;App</Link>
+                  <Link href="/download" className="text-secondary">Télécharger l&apos;App</Link>
                 </Button>
               </motion.div>
             </motion.div>
