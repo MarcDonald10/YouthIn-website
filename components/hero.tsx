@@ -156,10 +156,10 @@ export default function Hero() {
                   className="w-full sm:w-auto bg-primary text-dark hover:bg-primary/90 glow-primary-intense glow-expand-hover text-base sm:text-lg md:text-xl font-black px-6 sm:px-10 md:px-14 py-5 sm:py-6 md:py-8 h-auto group rounded-xl sm:rounded-2xl ripple-effect"
                 >
                   <Link href="/download" className="flex items-center justify-center">
-                    <Rocket className="mr-2 sm:mr-3 group-hover:translate-y-[-4px] transition-transform" size={20} />
+                    <Rocket className="mr-2 sm:mr-3 group-hover:translate-y-[-4px] transition-transform text-secondary" size={20} />
                     <span className="sm:hidden">Commencer</span>
-                    <span className="hidden sm:inline">Commencer Maintenant</span>
-                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
+                    <span className="hidden sm:inline text-secondary">Commencer Maintenant</span>
+                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform text-secondary" size={20} />
                   </Link>
                 </Button>
               </motion.div>
@@ -173,8 +173,8 @@ export default function Hero() {
                   variant="outline"
                   className="w-full sm:w-auto border-3 border-primary text-foreground hover:bg-primary/20 hover:border-primary text-base sm:text-lg md:text-xl font-black px-6 sm:px-10 md:px-14 py-5 sm:py-6 md:py-8 h-auto backdrop-blur-xl bg-dark/50 rounded-xl sm:rounded-2xl glow-primary border-dance"
                 >
-                  <Link href="/about" className="flex items-center justify-center">
-                    <Sparkles className="mr-2 sm:mr-3" size={20} />
+                  <Link href="/about" className="flex items-center justify-center text-primary">
+                    <Sparkles className="mr-2 sm:mr-3 text-primary" size={20} />
                     Découvrir YouthIn
                   </Link>
                 </Button>

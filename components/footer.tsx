@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Zap } from "lucide-react"
+import { Facebook, X, Instagram, Linkedin, Mail, MapPin, Phone, Zap } from "lucide-react"
 import Image from "next/image"
 
 export default function Footer() {
@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: "#" },
-                { icon: Twitter, href: "#" },
+                { icon: X, href: "#" },
                 { icon: Instagram, href: "#" },
                 { icon: Linkedin, href: "#" },
               ].map((social, index) => (
@@ -106,11 +106,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Phone size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                <span>+33 1 23 45 67 89</span>
+                <span>............</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                <span>Paris, France</span>
+                <span>Douala, Cameroun</span>
               </li>
             </ul>
           </div>

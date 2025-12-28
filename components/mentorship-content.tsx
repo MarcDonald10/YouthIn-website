@@ -177,7 +177,7 @@ export default function MentorshipContent() {
               Rejoignez YouthIn aujourd&apos;hui et connectez-vous avec un mentor qui transformera votre parcours
             </p>
             <Button asChild size="lg" className="bg-primary text-secondary hover:bg-primary/90">
-              <Link href="/download">Commencer Maintenant</Link>
+              <Link href="/download" className="text-secondary">Commencer Maintenant</Link>
             </Button>
           </motion.div>
         </div>
