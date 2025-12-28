@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <motion.div
-              className="w-50 h-15   flex items-center justify-center relative overflow-hidden"
+              className="w-32 h-10 sm:w-35 sm:h-10 md:w-48 md:h-14 lg:w-50 lg:h-15 flex items-center justify-center relative overflow-hidden"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.8, type: "spring" }}
             >

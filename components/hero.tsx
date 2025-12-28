@@ -32,7 +32,7 @@ export default function Hero() {
   }, [mouseX, mouseY])
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background mt-10">
       <div className="absolute inset-0 grid-pattern-primary opacity-30 md:opacity-40" />
       <div className="absolute inset-0 dots-pattern opacity-50 md:opacity-70" />
 
@@ -157,7 +157,7 @@ export default function Hero() {
                 >
                   <Link href="/download" className="flex items-center justify-center">
                     <Rocket className="mr-2 sm:mr-3 group-hover:translate-y-[-4px] transition-transform text-secondary" size={20} />
-                    <span className="sm:hidden">Commencer</span>
+                    <span className="sm:hidden text-secondary">Commencer</span>
                     <span className="hidden sm:inline text-secondary">Commencer Maintenant</span>
                     <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform text-secondary" size={20} />
                   </Link>
